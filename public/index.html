@@ -7,7 +7,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
 
-	<title>Node/Angular Todo App</title>
+	<title>get R.T.I</title>
 
 	<!-- SCROLLS -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
@@ -21,11 +21,11 @@
 
 	<!-- SPELLS -->
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
-
-	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+    <script src="js/controllers/main.js"></script> <!-- load up our controller -->
 	<script src="js/services/todos.js"></script> <!-- load our todo service -->
 	<script src="js/core.js"></script> <!-- load our main application -->
-
+   <!--css-->
+    <link href="css/app.css" rel="stylesheet">
 </head>
 <!-- SET THE CONTROLLER -->
 <body ng-controller="mainController">
@@ -33,28 +33,11 @@
 
 		<!-- HEADER AND TODO COUNT -->
 		<div class="jumbotron text-center">
-			<h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
-		</div>
-
+			<h1>Soochna ka Haq </h1>
+            <h4>RTI has empowered people to ask questions of their government and breach the culture of secrecy pervading the government.</h4>
+        </div>
 		<!-- TODO LIST -->
-		<div id="todo-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
 
-				
-
-				<!-- LOOP OVER THE TODOS IN $scope.todos -->
-				<div class="checkbox" ng-repeat="todo in todos">
-					<label>
-					 {{ todo['department'] }}
-					</label>
-				</div>
-
-				<p class="text-center" ng-show="loading">
-					<span class="fa fa-spinner fa-spin fa-3x"></span>
-				</p>
-
-			</div>
-		</div>
 
 		<!-- FORM TO CREATE TODOS -->
 		<div id="todo-form" class="row">
@@ -67,15 +50,59 @@
 					</div>
 
 					<!-- createToDo() WILL CREATE NEW TODOS -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Add</button>
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Search</button>
 				</form>
 			</div>
 		</div>
 
-		<div class="text-center text-muted">
-			<p>A demo by <a href="http://scotch.io">Scotch</a>.</p>
-			<p>Read the <a href="http://scotch.io/tutorials/javascript/creating-a-single-page-todo-app-with-node-and-angular">tutorial</a>.</p>
-		</div>
+        <div id="todo-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <div class="search_result" ng-repeat="data in todos">
+                    <li ng-hide="data['name'] == ''">
+                        Name :{{data['name']}}
+                    </li>
+                    <li ng-hide="data['address'] == ''">
+                        Address :{{data['address']}}
+                    </li>
+                    <li ng-hide="data['contact']['phone'] == ''">
+                        Phone no :{{data['contact']['phone']}}
+                    </li>
+                    <li ng-hide="data['contact']['fax'] == ''">
+                        Fax :{{data['contact']['fax']}}
+                    </li>
+                    <li ng-hide="data['email'] == ''">
+                        Email :{{data['email']}}
+                    </li>
+                    <li ng-hide="data['designation'] == ''">
+                        Designation :{{data['designation']}}
+                    </li>
+                    <li ng-hide="data['department'] == ''">
+                        Department :{{data['department']}}
+                    </li>
+                    <li ng-hide="data['location']['city'] == ''">
+                        City :{{data['location']['city']}}
+                    </li>
+                    <li ng-hide="data['location']['state'] == ''">
+                        State :{{data['location']['state']}}
+                    </li>
+                    <li ng-hide="data['location']['country'] == ''">
+                        Country :{{data['location']['country']}}
+                    </li>
+                    <li ng-hide="data['url']== ''">
+                        URL :{{data['url']}}
+                    </li>
+                </div>
+
+                <p class="text-center" ng-show="loading">
+                    <span class="fa fa-spinner fa-spin fa-3x"></span>
+                </p>
+
+            </div>
+        </div>
 
 	</div>
 
