@@ -1,0 +1,14 @@
+.search_result{
+    background: gainsboro;
+    border-radius: 7px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: black;
+}
+
+
+.search_result li {
+
+    list-style: none;
+
+}
