@@ -12,3 +12,14 @@
     list-style: none;
 
 }
+
+
+.jumbotron {
+    background-color: #F7F4EA;
+    color: #AE4F2F;
+    /*font-size: 21px;*/
+    /*font-weight: 200;*/
+    /*line-height: 2.14286;*/
+    /*margin-bottom: 30px;*/
+    /*padding: 30px;*/
+}
