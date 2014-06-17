@@ -32,12 +32,26 @@ module.exports = function(app) {
         var text_search = req.body.text;
 //        console.log('====');
 //        console.log(req.body);
+        var col = [];
         Information.find({ name : {$regex: text_search}  }, function(err, information) {
             //	Information.find({ name :req.params.name}, function(err, information) {
             if (err)
                 res.send(err);
+            //col.push(information);
             res.json(information);
-        })
+        });
+
+//         Information.find({ department : {$regex: text_search}  }, function(err, information1) {
+//            //	Information.find({ name :req.params.name}, function(err, information) {
+//            if (err)
+//                res.send(err);
+//            col.push(information1);
+//            var merged = [];
+//            merged = merged.concat.apply(merged, col);
+//            res.json(merged);
+//        });
+//
+
 		});
 
 //	});
@@ -64,3 +78,5 @@ module.exports = function(app) {
 		res.sendfile('./public/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 	});
 };
+
+
